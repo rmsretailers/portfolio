@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!doctype html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">  &lt;meta charset="utf-8" /&gt;</span></p>
+<p class="p1"><span class="s1">  &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</span></p>
+<p class="p1"><span class="s1">  &lt;title&gt;RMS Portfolio Flipbook&lt;/title&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">  &lt;link</span></p>
+<p class="p1"><span class="s1">    rel="stylesheet"</span></p>
+<p class="p1"><span class="s1">    href="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/src/Style/stPageFlip.min.css"</span></p>
+<p class="p1"><span class="s1">  /&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">  &lt;style&gt;</span></p>
+<p class="p1"><span class="s1">    body {</span></p>
+<p class="p1"><span class="s1">      margin: 0;</span></p>
+<p class="p1"><span class="s1">      background: #111;</span></p>
+<p class="p1"><span class="s1">      display: flex;</span></p>
+<p class="p1"><span class="s1">      justify-content: center;</span></p>
+<p class="p1"><span class="s1">      align-items: flex-start;</span></p>
+<p class="p1"><span class="s1">      min-height: 100vh;</span></p>
+<p class="p1"><span class="s1">      font-family: Arial, sans-serif;</span></p>
+<p class="p1"><span class="s1">    }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    #book-wrap {</span></p>
+<p class="p1"><span class="s1">      width: min(1100px, 96vw);</span></p>
+<p class="p1"><span class="s1">      height: min(720px, 86vh);</span></p>
+<p class="p1"><span class="s1">      margin: 2vh 0;</span></p>
+<p class="p1"><span class="s1">    }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    #book {</span></p>
+<p class="p1"><span class="s1">      width: 100%;</span></p>
+<p class="p1"><span class="s1">      height: 100%;</span></p>
+<p class="p1"><span class="s1">    }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    .hint {</span></p>
+<p class="p1"><span class="s1">      position: fixed;</span></p>
+<p class="p1"><span class="s1">      bottom: 10px;</span></p>
+<p class="p1"><span class="s1">      left: 0;</span></p>
+<p class="p1"><span class="s1">      right: 0;</span></p>
+<p class="p1"><span class="s1">      color: #bbb;</span></p>
+<p class="p1"><span class="s1">      font-size: 13px;</span></p>
+<p class="p1"><span class="s1">      text-align: center;</span></p>
+<p class="p1"><span class="s1">      pointer-events: none;</span></p>
+<p class="p1"><span class="s1">    }</span></p>
+<p class="p1"><span class="s1">  &lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">  &lt;div id="book-wrap"&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;div id="book"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">  &lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">  &lt;div class="hint"&gt;Tip: swipe or drag pages to flip&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">  &lt;script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"&gt;&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">  &lt;script type="module"&gt;</span></p>
+<p class="p1"><span class="s1">    import * as pdfjsLib from "https://unpkg.com/pdfjs-dist@5.0.375/build/pdf.min.mjs";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    pdfjsLib.GlobalWorkerOptions.workerSrc =</span></p>
+<p class="p1"><span class="s1">      "https://unpkg.com/pdfjs-dist@5.0.375/build/pdf.worker.min.mjs";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    // Your PDF is hardcoded here</span></p>
+<p class="p1"><span class="s1">    const PDF_URL =</span></p>
+<p class="p1"><span class="s1">      "https://rmsretailers.com/wp-content/uploads/2026/04/RMS-Management-Portfolio-2026-FINAL.pdf";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    const container = document.getElementById("book");</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    async function pdfToImages(pdfUrl, scale = 1.6, maxPages = 120) {</span></p>
+<p class="p1"><span class="s1">      const loadingTask = pdfjsLib.getDocument(pdfUrl);</span></p>
+<p class="p1"><span class="s1">      const pdf = await loadingTask.promise;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">      const total = Math.min(pdf.numPages, maxPages);</span></p>
+<p class="p1"><span class="s1">      const images = [];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">      for (let pageNum = 1; pageNum &lt;= total; pageNum++) {</span></p>
+<p class="p1"><span class="s1">        const page = await pdf.getPage(pageNum);</span></p>
+<p class="p1"><span class="s1">        const viewport = page.getViewport({ scale });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        const canvas = document.createElement("canvas");</span></p>
+<p class="p1"><span class="s1">        const ctx = canvas.getContext("2d", { alpha: false });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        canvas.width = Math.floor(viewport.width);</span></p>
+<p class="p1"><span class="s1">        canvas.height = Math.floor(viewport.height);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        await page.render({ canvasContext: ctx, viewport }).promise;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">        // JPEG keeps size down compared to PNG for most PDFs</span></p>
+<p class="p1"><span class="s1">        images.push(canvas.toDataURL("image/jpeg", 0.92));</span></p>
+<p class="p1"><span class="s1">      }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">      return images;</span></p>
+<p class="p1"><span class="s1">    }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">    (async () =&gt; {</span></p>
+<p class="p1"><span class="s1">      const images = await pdfToImages(PDF_URL);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">      const pageFlip = new St.PageFlip(container, {</span></p>
+<p class="p1"><span class="s1">        width: 550,</span></p>
+<p class="p1"><span class="s1">        height: 720,</span></p>
+<p class="p1"><span class="s1">        size: "stretch",</span></p>
+<p class="p1"><span class="s1">        showCover: true,</span></p>
+<p class="p1"><span class="s1">        maxShadowOpacity: 0.25,</span></p>
+<p class="p1"><span class="s1">        flippingTime: 800</span></p>
+<p class="p1"><span class="s1">      });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">      pageFlip.loadFromImages(images);</span></p>
+<p class="p1"><span class="s1">    })();</span></p>
+<p class="p1"><span class="s1">  &lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<p class="p1"><span class="s1">``</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+</body>
+</html>
